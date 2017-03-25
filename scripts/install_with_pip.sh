@@ -14,4 +14,4 @@ pip check
 
 abidoc.py man ecut
 abirun.py --help
-abicheck --help
+abicheck.py --help

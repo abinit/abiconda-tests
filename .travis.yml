@@ -20,6 +20,7 @@ install:
   #- sudo apt-get update
   - env
 
+  # Install with pip and wheels
   - scripts/install_with_pip.sh
 
   # Install conda https://conda.io/docs/travis.html
