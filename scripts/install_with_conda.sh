@@ -1,5 +1,6 @@
 #!/bin/bash
-set -ev  # exit on first error, print each command
+set -e
+#set -ev  # exit on first error, print each command
 
 # Replace dep1 dep2 ... with your dependencies
 # conda create -q -n test-environment python=${PYTHON_VERSION} dep1 dep2 ...

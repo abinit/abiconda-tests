@@ -18,8 +18,6 @@ matrix:
       language: generic
       env: PYTHON_VERSION=3.6
 
-#sudo: required
-
 install:
   - env
 
@@ -35,14 +33,11 @@ before_script:
     - if [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then rvm get head; fi 
 
 # command to run tests
-#script: ./dev_scripts/runtests.sh
+script: true
 
 branches:
   only:
     - master
-
-#after_success:
-#- if [[ "${PYTHON_VERSION}" == "2.7" && "${TRAVIS_OS_NAME}" == "linux" ]]; then coveralls; fi
 
 notifications:
   email:

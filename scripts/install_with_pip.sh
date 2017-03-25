@@ -1,5 +1,6 @@
 #!/bin/bash
-set -ev  # exit on first error, print each command
+set -e
+#set -ev  # exit on first error, print each command
 
 which pip
 pip --version
