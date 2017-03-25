@@ -21,5 +21,5 @@ conda install abipy
 # Test
 abidoc.py man ecut
 abirun.py --help
-#abicheck --help
+abicheck.py --help
 conda env remove -n ${test_env} -y
