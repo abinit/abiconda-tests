@@ -3,7 +3,7 @@ set -ev  # exit on first error, print each command
 
 which pip
 pip --version
-pip install --upgrade pip
+pip install -U pip setuptools
 pip --version
 pip check
 
