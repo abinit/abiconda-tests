@@ -45,9 +45,10 @@ cat abipy/installed_files.txt | xargs rm -rf
 
 git clone https://github.com/materialsproject/pymatgen.git
 cd pymatgen && git checkout master
-conda install -y --file ./requirements.txt
+#conda install -y --file ./requirements.txt
 #conda install -y --file ./requirements-optional.txt
-python setup.py install --record pymatgen_files.txt && cd ../
+pip install -q -r requirements.txt && pip install -q -r requirements-optional.txt && python setup.py install && cd ../
+#python setup.py install --record pymatgen_files.txt && cd ../
 
 cd abipy && git checkout master
 conda install -y --file ./requirements.txt
