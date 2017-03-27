@@ -13,7 +13,7 @@ source activate ${test_env}
 conda config --add channels conda-forge
 conda config --add channels matsci
 conda config --add channels abinit
-conda config --add channels gmatteo
+#conda config --add channels gmatteo
 
 # Install
 conda install abinit
