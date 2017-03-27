@@ -1,6 +1,6 @@
 #!/bin/bash
-set -e
-#set -ev  # exit on first error, print each command
+#set -e
+set -ev  # exit on first error, print each command
 
 # Replace dep1 dep2 ... with your dependencies
 # conda create -q -n test-environment python=${PYTHON_VERSION} dep1 dep2 ...
@@ -26,12 +26,11 @@ abicheck.py --help
 
 # Test abipy/develop with pymatgen installed from conda.
 conda uninstall abipy
-
 git clone https://github.com/abinit/abipy.git 
 cd abipy && git checkout develop
 conda install -y --file ./requirements-optional.txt
 conda install -y --file ./requirements.txt
-python setup.py install && cd ../
+python setup.py install --record installed_files.txt && cd ../
 
 # Test Abipy scripts
 abidoc.py man ecut
@@ -39,22 +38,21 @@ abirun.py --help
 abicheck.py --help
 #abicheck.py --with-flow
 
-
 # Test pymatgen/master with abipy/master
 conda uninstall pymatgen
-conda uninstall abipy
+cat abipy/installed_files.txt | xargs rm -rf
+#conda uninstall abipy
 
-git clone https://github.com/gmatteo/pymatgen.git
+git clone https://github.com/materialsproject/pymatgen.git
 cd pymatgen && git checkout master
 conda install -y --file ./requirements-optional.txt
 conda install -y --file ./requirements.txt
-python setup.py install && cd ../
-
+python setup.py install --record pymatgen_files.txt && cd ../
 
 cd abipy && git checkout master
 conda install -y --file ./requirements-optional.txt
 conda install -y --file ./requirements.txt
-python setup.py install && cd ../
+python setup.py install --record installed_files.txt && cd ../
 
 # Test Abipy scripts
 abidoc.py man ecut
