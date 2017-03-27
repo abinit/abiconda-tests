@@ -47,11 +47,12 @@ git clone https://github.com/materialsproject/pymatgen.git
 cd pymatgen && git checkout master
 #conda install -y --file ./requirements.txt
 #conda install -y --file ./requirements-optional.txt
-pip install -q -r requirements.txt && pip install -q -r requirements-optional.txt && python setup.py install && cd ../
-#python setup.py install --record pymatgen_files.txt && cd ../
+pip install -q -r requirements.txt && pip install -q -r requirements-optional.txt 
+python setup.py install --record installed_files.txt && cd ../
 
 cd abipy && git checkout master
-conda install -y --file ./requirements.txt
+pip install -q -r requirements.txt && pip install -q -r requirements-optional.txt 
+#conda install -y --file ./requirements.txt
 #conda install -y --file ./requirements-optional.txt
 python setup.py install --record installed_files.txt && cd ../
 
@@ -67,4 +68,5 @@ conda env remove -n ${test_env} -y
 
 #- git clone https://github.com/gmatteo/pymatgen.git && cd pymatgen && pip install -q -r requirements.txt && pip install -q -r requirements-optional.txt && python setup.py install && cd ../
 # pymatgen master
-#- git clone https://github.com/materialsproject/pymatgen.git && cd pymatgen && pip install -q -r requirements.txt && pip install -q -r requirements-optional.txt && python setup.py install && cd ../
+#- git clone https://github.com/materialsproject/pymatgen.git && cd pymatgen && 
+pip install -q -r requirements.txt && pip install -q -r requirements-optional.txt && python setup.py install
