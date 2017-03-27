@@ -69,4 +69,4 @@ conda env remove -n ${test_env} -y
 #- git clone https://github.com/gmatteo/pymatgen.git && cd pymatgen && pip install -q -r requirements.txt && pip install -q -r requirements-optional.txt && python setup.py install && cd ../
 # pymatgen master
 #- git clone https://github.com/materialsproject/pymatgen.git && cd pymatgen && 
-pip install -q -r requirements.txt && pip install -q -r requirements-optional.txt && python setup.py install
+#pip install -q -r requirements.txt && pip install -q -r requirements-optional.txt && python setup.py install
