@@ -22,7 +22,7 @@ conda install abipy
 abidoc.py man ecut
 abirun.py --help
 abicheck.py --help
-#abicheck.py --with-flow
+#abicheck.py --with-ebands-flow
 
 ######################################################
 # Test abipy/develop with pymatgen installed via conda
@@ -44,7 +44,7 @@ python setup.py install --record installed_files.txt && cd ../
 abidoc.py man ecut
 abirun.py --help
 abicheck.py
-#abicheck.py --with-flow
+#abicheck.py --with-ebands-flow
 
 #################################################
 # Test abipy/master (stable) with pymatgen/master 
@@ -66,7 +66,7 @@ python setup.py install --record installed_files.txt && cd ../
 abidoc.py man ecut
 abirun.py --help
 abicheck.py
-#abicheck.py --with-flow
+#abicheck.py --with-ebands-flow
 
 #########################################
 # Test abipy/develop with pymatgen/master 
@@ -80,7 +80,7 @@ python setup.py install --record installed_files.txt && cd ../
 abidoc.py man ecut
 abirun.py --help
 abicheck.py
-#abicheck.py --with-flow
+#abicheck.py --with-ebands-flow
 
 # Deactivate environment.
 source deactivate ${test_env}
