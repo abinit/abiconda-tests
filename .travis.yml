@@ -1,6 +1,5 @@
 language: python
 
-# We don't actually use the Travis Python but conda
 matrix:
   include:
     - os: linux
@@ -13,23 +12,23 @@ matrix:
 
     - os: osx
       python: 2.7
-      language: generic
+      #language: generic
       env: PYTHON_VERSION=2.7
 
     - os: osx
       python: 3.6
-      language: generic
+      #language: generic
       env: PYTHON_VERSION=3.6
 
 install:
   - env
 
-  # Install with pip and wheels
-  - scripts/pip_runtests.sh
-
   # Install conda https://conda.io/docs/travis.html
   - source scripts/conda_get.sh
   - scripts/conda_runtests.sh
+
+  # Install with pip and wheels
+  - scripts/pip_runtests.sh
 
 before_script:
     # https://github.com/travis-ci/travis-ci/issues/6307
