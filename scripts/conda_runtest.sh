@@ -1,6 +1,6 @@
 #!/bin/bash
-#set -e
-set -ev  # exit on first error, print each command
+set -e
+#set -ev  # exit on first error, print each command
 
 # Replace dep1 dep2 ... with your dependencies
 # conda create -q -n test-environment python=${PYTHON_VERSION} dep1 dep2 ...
@@ -22,7 +22,7 @@ conda install abipy
 abidoc.py man ecut
 abirun.py --help
 abicheck.py --help
-#abicheck.py --with-flow   # TODO
+abicheck.py --with-flow 
 
 ######################################################
 # Test abipy/develop with pymatgen installed via conda
@@ -65,7 +65,7 @@ python setup.py install --record installed_files.txt && cd ../
 abidoc.py man ecut
 abirun.py --help
 abicheck.py
-#abicheck.py --with-flow  # TODO: Require new release
+abicheck.py --with-flow  
 
 #########################################
 # Test abipy/develop with pymatgen/master 
@@ -79,7 +79,7 @@ python setup.py install --record installed_files.txt && cd ../
 abidoc.py man ecut
 abirun.py --help
 abicheck.py
-#abicheck.py --with-flow  # TODO: Require new release
+abicheck.py --with-flow  
 
 # Deactivate environment.
 source deactivate ${test_env}

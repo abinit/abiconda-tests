@@ -1,6 +1,6 @@
 #!/bin/bash
-set -e
-#set -ev  # exit on first error, print each command
+#set -e
+set -ev  # exit on first error, print each command
 
 which pip
 pip --version
@@ -10,7 +10,6 @@ pip check
 
 pip install six
 pip install abipy 
-#pip install ipython
 pip check
 
 abidoc.py man ecut

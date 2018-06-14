@@ -25,11 +25,11 @@ install:
   - env
 
   # Install with pip and wheels
-  - scripts/install_with_pip.sh
+  - scripts/pip_runtests.sh
 
   # Install conda https://conda.io/docs/travis.html
-  - source scripts/conda_installer.sh
-  - scripts/install_with_conda.sh
+  - source scripts/conda_get.sh
+  - scripts/conda_runtests.sh
 
 before_script:
     # https://github.com/travis-ci/travis-ci/issues/6307
