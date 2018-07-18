@@ -9,7 +9,7 @@ pip --version
 pip check
 
 pip install six
-pip install pymatgen==2018.6.11
+#pip install pymatgen==2018.6.11
 pip install abipy 
 pip check
 

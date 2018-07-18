@@ -1,34 +1,50 @@
 language: python
+cache: pip
+
+#dist: precise
+sudo: false
+
+env:
+  global:
+    - ABINIT_VERSION=8.8.2
+    - ABIPY_PYTEST=yes
+    - OPENBLAS_NUM_THREADS=1
+    - OMP_NUM_THREADS=1
 
 matrix:
   include:
     - os: linux
       python: 2.7
-      env: PYTHON_VERSION=2.7
-
+      env: 
+        - ABIPY_INSTALLER=conda
     - os: linux
       python: 3.6
-      env: PYTHON_VERSION=3.6
-
-      #- os: osx
-      #- python: 2.7
-      #- language: generic
-      #- env: PYTHON_VERSION=2.7
-
-    - #- os: osx
-      #- python: 3.6
-      #- language: generic
-      #- env: PYTHON_VERSION=3.6
+      env: 
+        - ABIPY_INSTALLER=conda
+    - os: osx
+      - python: 3.6
+      - language: generic
+      - env: 
+        - ABIPY_INSTALLER=conda
+    - os: linux
+      python: 3.7
+      # https://github.com/travis-ci/travis-ci/issues/9815
+      dist: xenial
+      sudo: true
+      env: 
+        - ABIPY_INSTALLER=pip
 
 install:
   - env
-
-  # Install conda https://conda.io/docs/travis.html
-  - source scripts/conda_get.sh
-  - scripts/conda_runtests.sh
-
-  # Install with pip and wheels
-  - scripts/pip_runtests.sh
+  - |
+      if [ "${ABIPY_INSTALLER}" == "conda" ]; then
+        # Install with conda https://conda.io/docs/travis.html
+        travis_wait source scripts/conda_get.sh
+        travis_wait scripts/conda_runtests.sh
+      elif [ "${ABIPY_INSTALLER}" == "pip" ]; then
+        # Install with pip and wheels
+        travis_wait scripts/pip_runtests.sh
+      fi
 
 before_script:
     # https://github.com/travis-ci/travis-ci/issues/6307
