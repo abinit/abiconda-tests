@@ -39,8 +39,8 @@ install:
   - |
       if [ "${ABIPY_INSTALLER}" == "conda" ]; then
         # Install with conda https://conda.io/docs/travis.html
-        travis_wait source scripts/conda_get.sh
-        travis_wait scripts/conda_runtests.sh
+        source scripts/conda_get.sh
+        source scripts/conda_runtests.sh
       elif [ "${ABIPY_INSTALLER}" == "pip" ]; then
         # Install with pip and wheels
         travis_wait scripts/pip_runtests.sh
