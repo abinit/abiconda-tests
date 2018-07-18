@@ -8,7 +8,7 @@ pip install -U pip setuptools
 pip --version
 pip check
 
-apt-get install libhdf5-dev libnetcdf-dev netcdf-bin
+sudo apt-get install libhdf5-dev libnetcdf-dev netcdf-bin
 
 pip install six
 #pip install pymatgen==2018.6.11
