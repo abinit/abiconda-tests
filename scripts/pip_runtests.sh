@@ -8,7 +8,7 @@ pip install -U pip setuptools
 pip --version
 pip check
 
-apt-get update
+sudo apt-get update
 sudo apt-get install libhdf5-dev libnetcdf-dev netcdf-bin
 
 #pip install six
