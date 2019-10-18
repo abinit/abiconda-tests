@@ -11,9 +11,7 @@ pip check
 sudo apt-get update
 sudo apt-get install libhdf5-dev libnetcdf-dev netcdf-bin
 
-#pip install six
-#pip install pymatgen==2018.6.11
-pip install abipy 
+pip install abipy
 # This will fails because pymatgen pins the reqs
 #pip check
 
