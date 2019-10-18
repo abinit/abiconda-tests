@@ -11,16 +11,15 @@ source activate ${test_env}
 
 # Add channels
 conda config --add channels conda-forge
-#conda config --add channels abinit
+
+echo "Installing abipy from abinit channel ..."
+conda install abipy  -c abinit
 
 # Install abinit and abipy from conda channels.
 echo "Installing abinit from abinit channel ..."
 conda install abinit -c abinit
 abinit --version
 abinit --build
-
-echo "Installing abipy from abinit channel ..."
-conda install abipy  -c abinit
 
 # Test Abipy scripts
 abidoc.py man ecut
