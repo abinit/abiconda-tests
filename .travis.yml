@@ -31,6 +31,11 @@ matrix:
       sudo: true
       env:
         - ABIPY_INSTALLER=pip
+    - os: osx
+      python: 3.7
+      sudo: true
+      env:
+        - ABIPY_INSTALLER=conda
 
 install:
   - env
