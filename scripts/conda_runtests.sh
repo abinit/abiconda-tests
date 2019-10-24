@@ -4,13 +4,13 @@ set -e
 
 # Replace dep1 dep2 ... with your dependencies
 # conda create -q -n test-environment python=${PYTHON_VERSION} dep1 dep2 ...
-test_env=test-py${PYTHON_VERSION}
-conda env remove -n ${test_env} -y || true
-conda create -q -n ${test_env} python=${PYTHON_VERSION}
-source activate ${test_env}
+#test_env=test-py${PYTHON_VERSION}
+#conda env remove -n ${test_env} -y || true
+#conda create -q -n ${test_env} python=${PYTHON_VERSION}
+#source activate ${test_env}
 
 # Add channels
-conda config --add channels conda-forge
+#conda config --add channels conda-forge
 
 echo "Installing abipy from abinit channel ..."
 conda install abipy -c abinit
@@ -84,5 +84,5 @@ abicheck.py --with-flow
 #abicheck.py --with-flow
 
 # Deactivate environment.
-source deactivate ${test_env}
-conda env remove -n ${test_env} -y
+#source deactivate ${test_env}
+#conda env remove -n ${test_env} -y

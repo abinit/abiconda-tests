@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ev  # exit on first error, print each command
+set -e  # exit on first error, -v print each command
 
 # Install conda with travis: https://conda.io/docs/travis.html
 if [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then
@@ -16,7 +16,7 @@ conda config --set always_yes yes --set changeps1 yes
 conda update -q conda
 # Useful for debugging any issues with conda
 conda info -a
-
+conda config --add channels conda-forge
 echo "Installing abinit from abinit channel in abinit-environment..."
 conda create -q -n abinit-environment python=${TRAVIS_PYTHON_VERSION}
 source activate abinit-environment
