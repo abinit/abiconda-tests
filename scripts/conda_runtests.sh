@@ -12,8 +12,8 @@ set -e
 # Add channels
 #conda config --add channels conda-forge
 
-echo "Installing abipy from abinit channel ..."
-conda install abipy -c abinit
+echo "Installing abipy from conda-forge channel ..."
+conda install abipy -c conda-forge
 
 # Install abinit and abipy from conda channels.
 #echo "Installing abinit from abinit channel ..."
